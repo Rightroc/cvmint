@@ -1,31 +1,47 @@
 "use client";
 
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Input from "@/components/ui/Input";
+import { p } from "framer-motion/client";
 
 const schema = z.object({
   fullName: z.string().min(3, "Full name is required"),
   email: z.string().email("Enter a valid email"),
   phone: z.string().min(10, "Phone number is too short"),
-  linkedIn: z.string().url("Enter a valid LinkedIn profile URL").optional(),
-  "portfolio/Website": z.string().url("Enter a valid portfolio/website URL").optional,
-  "github profile": z.string().url("Enter a valid GitHub profile URL").optional,
+  linkedIn: z.string().url().optional(),
+  portfolio: z.string().url().optional(),
+  github: z.string().url().optional(),
   address: z.string().min(3, "Address is required"),
   title: z.string().min(2, "Professional title is required"),
 });
 
 type FormData = z.infer<typeof schema>;
 
-export default function PersonalInfoForm() {
+interface Props {
+  cvData: any;
+  setCvData: React.Dispatch<React.SetStateAction<any>>;
+}
+
+export default function PersonalInfoForm({ cvData, setCvData }: Props) {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
+  const formValues = watch();
+
+  useEffect(() => { 
+    setCvData({
+      ...cvData,
+      personal: formValues,
+    });
+  }, [formValues]);
 
   const onSubmit = (data: FormData) => {
     console.log(data);
@@ -69,19 +85,19 @@ export default function PersonalInfoForm() {
       />
 
       <Input
-        label="portfolio/Website"
+        label="portfolio"
         type="url"
         placeholder="https://www.portfolio/Website.com"
-        register={register("portfolio/Website")}
-        error={errors["portfolio/Website"]?.message}
+        register={register("portfolio")}
+        error={errors["portfolio"]?.message}
       />
 
       <Input
-        label="github profile"
+        label="github"
         type="url"
         placeholder="https://www.github.com/yourprofile"
-        register={register("github profile")}
-        error={errors["github profile"]?.message}
+        register={register("github")}
+        error={errors["github"]?.message}
       />
 
       <Input
