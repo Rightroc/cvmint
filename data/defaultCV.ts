@@ -12,11 +12,35 @@ export const defaultCV = {
 
   summary: "",
 
-  education: [],
+  education: [
+    {
+      school: "",
+      degree: "",
+      course: "",
+      startYear: "",
+      endYear: "",
+      current: false,
+    },
+  ],
 
-  experience: [],
+  experience: [
+    {
+      company: "",
+      position: "",
+      startDate: "",
+      endDate: "",
+      current: false,
+      description: "",
+    },
+  ],
 
-  skills: [],
+  skills: [""],
 
-  referees: [],
+  referees: [
+    {
+      name: "",
+      phone: "",
+      relationship: "",
+    },
+  ],
 };
