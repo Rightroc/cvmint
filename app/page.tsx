@@ -4,7 +4,7 @@ import Features from "@/components/home/Features";
 
 export default function Home() {
   return (
-    <main className="bg-gray-50">
+    <main className="bg-slate-100">
       <Navbar />
       <Hero />
       <Features />

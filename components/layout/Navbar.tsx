@@ -6,7 +6,7 @@ export default function Navbar() {
           CV<span className="text-blue-600">CRAFT</span>
         </h1>
 
-        <button className="rounded-lg bg-blue-600 px-5 py-2 font-medium text-white transition hover:bg-blue-700">
+        <button className="rounded-lg bg-blue-600 px-6 py-2.5 font-medium text-white transition hover:bg-blue-700">
           no sign up required😊😉😊
         </button>
       </div>

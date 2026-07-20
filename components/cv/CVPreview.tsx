@@ -26,7 +26,17 @@ export default function CVPreview({ data }: Props) {
 
   return (
     <>
-      <div className="mb-5 flex justify-end items-start">
+      <div className="mb-5 flex items-center justify-between">
+        <div>
+          <h2 className="text-xl font-bold text-slate-900">
+            CV Preview
+          </h2>
+
+          <p className="text-sm text-slate-500">
+            Live preview updates as you type.
+          </p>
+        </div>
+
         <ExportMenu
           onPdf={handlePrint}
           onWord={() => exportWord(data)}
@@ -36,7 +46,7 @@ export default function CVPreview({ data }: Props) {
       {/* CV AREA */}
       <div
         ref={cvRef}
-        className="cv-page relative mx-auto lg:sticky lg:top-8 min-h-[1123px] w-full max-w-[794px] rounded-xl border border-gray-200 bg-white p-10 shadow-2xl"
+        className="cv-page relative mx-auto lg:sticky lg:top-8 min-h-[1123px] w-full max-w-[794px] rounded-xl border border-gray-200 bg-white p-10 shadow-xl transition-all duration-300"
       >
 
         {/* Watermark */}
@@ -53,7 +63,7 @@ export default function CVPreview({ data }: Props) {
           </h1>
 
           <p className="mt-6 grid gap-3 text-sm text-slate-700 md:grid-cols-2">
-            {person.title || "Software Engineer"}
+            {person.title || "Start filling out the form to see your CV update live."}
           </p>
 
 
@@ -267,7 +277,7 @@ export default function CVPreview({ data }: Props) {
 
             <div
               key={index}
-              className="rounded-xl border border-gray-200 bg-gray-50 p-5 shadow-sm"
+              className="rounded-xl border border-gray-200 bg-slate-100 p-5 shadow-sm"
             >
 
               <h3 className="text-lg font-semibold text-slate-900">
@@ -297,7 +307,7 @@ export default function CVPreview({ data }: Props) {
         )}
 
         <div className="no-print mt-12 border-t pt-5 text-center text-xs text-gray-400">
-          Created with CVCraft
+          Generated with CVCraft
         </div>
 
       </div>

@@ -7,13 +7,13 @@ export default function ProgressBar({
   currentStep,
   totalSteps,
 }: ProgressBarProps) {
-  const percentage = (currentStep / totalSteps) * 100;
+  const percentage = ((currentStep + 1) / totalSteps) * 100;
 
   return (
     <div className="w-full">
       <div className="mb-2 flex justify-between text-sm text-gray-600">
         <span>
-          Step {currentStep} of {totalSteps}
+          Step {currentStep + 1} of {totalSteps}
         </span>
 
         <span>{Math.round(percentage)}%</span>

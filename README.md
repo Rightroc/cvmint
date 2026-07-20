@@ -1,52 +1,92 @@
 # CVCraft
 
-A modern CV Builder built with Next.js, React, Tailwind CSS and TypeScript.
+A modern CV builder that helps users create professional resumes with a live preview and export them as PDF or Microsoft Word documents.
 
 ## Features
 
-- Multi-step CV Builder
-- Live CV Preview
-- Professional CV Template
-- PDF Export / Print
-- Responsive Design
-- TypeScript
-- Tailwind CSS
+- ✨ Multi-step CV builder
+- 👀 Live CV preview
+- 📄 Export to PDF
+- 📝 Export to Microsoft Word (.docx)
+- 📱 Responsive interface
+- ⚡ Fast and modern UI
+- 🎨 Clean professional design
 
-## Tech Stack
+---
+
+## Built With
 
 - Next.js
 - React
 - TypeScript
 - Tailwind CSS
 - react-to-print
+- docx
+- file-saver
 
-## Installation
+---
+
+## Getting Started
+
+Clone the project
 
 ```bash
 git clone https://github.com/Rightroc/cvmint.git
-cd cvmint
+```
+
+Install dependencies
+
+```bash
 npm install
+```
+
+Run the development server
+
+```bash
 npm run dev
 ```
 
-## Folder Structure
+Open
+
+```
+http://localhost:3000
+```
+
+---
+
+## Project Structure
 
 ```
 app/
 components/
 data/
-types/
+lib/
 public/
+types/
 ```
+
+---
+
+## Screenshots
+
+Coming soon.
+
+---
 
 ## Future Improvements
 
-- Multiple templates
-- Dark mode
-- Profile picture
-- Drag & Drop sections
-- AI-generated summaries
+- Multiple CV templates
+- Theme customization
+- Drag-and-drop section ordering
+- User authentication
+- Cloud storage
+- AI-assisted CV writing
+
+---
 
 ## Author
 
-Righteousness Chukwuneke
+Righteousness Chukwuneke Okechukwu
+
+GitHub:
+https://github.com/Rightroc

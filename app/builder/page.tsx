@@ -23,8 +23,8 @@ export default function BuilderPage() {
       block: "start",
     });
     setTimeout(() => {
-      alert("🎉 Your CV is ready! You can now export it as a PDF.");
-    }, 500);
+      alert("🎉 Your CV is ready! You can now export it as a PDF or Word document.");
+    }, 400);
   };
 
   const nextStep = () => {
@@ -40,10 +40,19 @@ export default function BuilderPage() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 py-10">
+    <main className="min-h-screen bg-slate-100 py-12">
+      <div className="mx-auto mb-10 max-w-7xl">
+        <h1 className="text-4xl font-bold text-slate-900">
+          CVCraft
+        </h1>
+
+        <p className="mt-2 text-slate-600">
+          Build a professional CV with live preview, PDF and Word export.
+        </p>
+      </div>
       <div className="mx-auto grid max-w-7xl items-start gap-8 lg:grid-cols-2">
 
-        <div className="rounded-2xl bg-white p-8 shadow-lg">
+        <div className="rounded-3xl bg-white p-10 shadow-xl">
           <ProgressBar
             currentStep={currentStep}
             totalSteps={formSteps.length}
@@ -52,7 +61,7 @@ export default function BuilderPage() {
             {formSteps[currentStep]}
           </h2>
 
-          <div className="mt-8">
+          <div className="mt-10">
 
             {currentStep === 0 && (
               <PersonalInfoForm
@@ -103,10 +112,14 @@ export default function BuilderPage() {
             <button
               onClick={prevStep}
               disabled={currentStep === 0}
-              className="rounded-lg border border-gray-300 px-5 py-2 text-gray-700 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50"
+              className="rounded-lg border border-gray-300 px-6 py-2.5 text-gray-700 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50"
             >
               ← Previous
             </button>
+
+            <p className="mt-2 text-sm text-slate-500">
+              Complete each section to build your CV.
+            </p>
 
             <button
               onClick={
@@ -114,7 +127,7 @@ export default function BuilderPage() {
                   ? finish
                   : nextStep
               }
-              className={`rounded-lg px-5 py-2 font-medium transition ${
+              className={`rounded-lg px-6 py-2.5 font-medium transition ${
                 currentStep === formSteps.length - 1
                   ? "bg-green-600 text-white hover:bg-green-700"
                   : "bg-blue-600 text-white hover:bg-blue-700"

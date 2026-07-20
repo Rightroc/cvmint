@@ -43,7 +43,7 @@ export default function ExportMenu({
       </button>
 
       {open && (
-        <div className="absolute right-0 z-50 mt-2 w-52 rounded-lg border bg-white shadow-xl">
+        <div className="absolute right-0 z-50 mt-2 w-52 rounded-lg border bg-white shadow-xl "transition-all duration-300>
 
           <button
             onClick={() => {

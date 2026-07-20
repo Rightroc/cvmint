@@ -27,7 +27,7 @@ export default function Features() {
         return (
           <div
             key={feature.title}
-            className="rounded-2xl border bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-xl"
+            className="rounded-2xl border bg-white p-8 shadow-sm transition hover:-translate-y-2 hover: "
           >
             <Icon className="mb-5 h-10 w-10 text-blue-600" />
 
