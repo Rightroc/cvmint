@@ -13,17 +13,19 @@ import SkillsForm from "@/components/form/SkillsForm";
 import RefereeForm from "@/components/form/RefereeForm";
 
 
-const previewRef = useRef<HTMLDivElement>(null);
-const finish = () => {
-  previewRef.current?.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-};
-
 export default function BuilderPage() {
   const [currentStep, setCurrentStep] = useState(0);
   const [cvData, setCvData] = useState(defaultCV);
+  const previewRef = useRef<HTMLDivElement>(null);
+  const finish = () => {
+    previewRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+    setTimeout(() => {
+      alert("🎉 Your CV is ready! You can now export it as a PDF.");
+    }, 500);
+  };
 
   const nextStep = () => {
     if (currentStep < formSteps.length - 1) {

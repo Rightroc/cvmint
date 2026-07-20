@@ -109,13 +109,6 @@ export default function PersonalInfoForm({
         register={register("title")}
         error={errors.title?.message}
       />
-
-      <button
-        type="submit"
-        className="rounded-xl bg-blue-600 px-6 py-3 font-medium text-white transition hover:bg-blue-700"
-      >
-        Next →
-      </button>
     </form>
   );
 }
